@@ -1,0 +1,37 @@
+# Compiled source #
+###################
+*.class
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+
+# IDE(Eclipse/Idea) files #
+###########################
+.classpath
+.project
+.settings
+.idea
+.metadata
+*.iml
+*.ipr
+
+
+# Folders #
+###########
+bin/*
+!bin/custom/*
+config/*
+!config/localextensions.xml
+config/local.properties
+data/*
+log/*
+roles/*
+temp/*
