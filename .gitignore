@@ -27,12 +27,13 @@ Thumbs.db
 # Folders #
 ###########
 bin/*
-!bin/custom/*
 config/*
-!config/localextensions.xml
-config/local.properties
 data/*
 log/*
 roles/*
 temp/*
+!bin/platform
+bin/platform/*
 !bin/platform/hybrisserver.bat
+!bin/custom/*
+!config/localextensions.xml
