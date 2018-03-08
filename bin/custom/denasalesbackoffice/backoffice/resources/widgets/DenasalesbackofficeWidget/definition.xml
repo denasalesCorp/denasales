@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<widget-definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widget-definition.xsd"
+	id="com.denasales.backoffice.widgets.denasalesbackofficewidget">
+	<name>denasalesbackoffice Sample Widget</name>
+	<description>denasalesbackoffice Sample Widget</description>
+	<defaultTitle>denasalesbackoffice Sample Widget</defaultTitle>
+	<author>Extgen</author>
+	<version>1.0</version>
+	<view src="denasalesbackofficewidget.zul" />
+	<keywords>
+		<keyword>denasalesbackoffice</keyword>
+	</keywords>
+	<controller class="com.denasales.backoffice.widgets.DenasalesbackofficeController" />
+</widget-definition>
