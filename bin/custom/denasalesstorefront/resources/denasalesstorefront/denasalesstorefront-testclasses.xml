@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?><testclasses><denasalesstorefront><testclass>com.denasales.storefront.service.impl.DefaultDenasalesstorefrontServiceIntegrationTest</testclass><testclass>com.denasales.storefront.jalo.DenasalesstorefrontTest</testclass></denasalesstorefront></testclasses>
+<?xml version="1.0" encoding="utf-8"?><testclasses><denasalesstorefront><testclass>com.denasales.storefront.jalo.DenasalesstorefrontTest</testclass></denasalesstorefront></testclasses>
