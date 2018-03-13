@@ -1,0 +1,12 @@
+$contentCatalog=denasalesContentCatalog
+$languages=de,en,es,es_CO,fr,hi,id,it,ja,ko,pt,ru,zh,zh_TW
+ 
+# Content catalog for CMS contents
+INSERT_UPDATE ContentCatalog ; id[unique=true] 
+                             ; $contentCatalog 
+                             
+# Catalog versions for content catalogs
+INSERT_UPDATE CatalogVersion ; catalog(id)[unique=true] ; version[unique=true] ; languages(isocode) ; inclAssurance ; inclDuty ; inclFreight ; inclPacking ; readPrincipals(uid) ; active ;  
+                             ; denasalesContentCatalog  ; Online               ; $languages         ; true          ; TRUE     ; TRUE        ; FALSE       ; employeegroup       ; TRUE   ;  
+                             ; denasalesContentCatalog  ; Staged               ; $languages         ; true          ; TRUE     ; TRUE        ; FALSE       ; employeegroup       ; FALSE  ;  
+                             

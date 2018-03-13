@@ -1,0 +1,6 @@
+# Language
+$lang=en
+ 
+# Create Base Store
+UPDATE BaseStore ; uid[unique=true] ; name[lang=$lang]  
+                 ; denasales        ; "Denasales Store" 

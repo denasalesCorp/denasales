@@ -1,0 +1,5 @@
+# Language
+$lang=de
+
+# Create Catalog
+UPDATE Catalog;id[unique=true];name[lang=$lang]

@@ -1,0 +1,12 @@
+$sourceProductCV=sourceVersion(catalog(id[default=denasalesProductCatalog]),version[default='Staged'])[unique=true,default='denasalesProductCatalog:Staged']
+$targetProductCV=targetVersion(catalog(id[default=denasalesProductCatalog]),version[default='Online'])[unique=true,default='denasalesProductCatalog:Online']
+$sourceContentCV=sourceVersion(catalog(id[default=denasalesContentCatalog]),version[default='Staged'])[unique=true,default='denasalesContentCatalog:Staged']
+$targetContentCV=targetVersion(catalog(id[default=denasalesContentCatalog]),version[default='Online'])[unique=true,default='denasalesContentCatalog:Online']
+ 
+#Insert Product Catalogs Synchronization
+INSERT_UPDATE CatalogVersionSyncJob ; code[unique=true]                           ; $sourceProductCV ; $targetProductCV ;  
+                                    ; sync denasalesProductCatalog:Staged->Online ;                  ;                  ;  
+                                    
+#Insert Content Catalogs Synchronization
+INSERT_UPDATE CatalogVersionSyncJob ; code[unique=true]                           ; $sourceContentCV ; $targetContentCV ;  
+                                    ; sync denasalesContentCatalog:Staged->Online ;                  ;                  ;  
