@@ -16,6 +16,25 @@
 			elementtype="VariantProduct" autocreate="true" generate="true" type="list" />
 	</collectiontypes>
 
+	<enumtypes>
+		<enumtype generate="false" code="SiteMapPageEnum" autocreate="false"
+			dynamic="true">
+			<value code="Registration" />
+			<value code="ProductList" />
+			<value code="ProductCategory" />
+			<value code="ProductDescription" />
+			<value code="Cart" />
+			<value code="FAQ" />
+			<value code="BillingShipping" />
+			<value code="CheckingBillingShippingAddresses" />
+			<value code="ProductPurchasing" />
+			<value code="Wishlist" />
+			<value code="Wishlists" />
+			<value code="ContactUs" />
+			<value code="PostRegistration" />
+		</enumtype>
+	</enumtypes>
+
 	<itemtypes>
 		<itemtype generate="true" code="SetProduct"
 			jaloclass="com.denasales.core.jalo.SetProduct" autocreate="true">
@@ -37,5 +56,64 @@
 				</attribute>
 			</attributes>
 		</itemtype>
+
+		<!-- CMS pages -->
+		<itemtype code="HomePage" jaloclass="de.hybris.platform.cms2.jalo.pages.HomePage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="ProductListPage"
+			jaloclass="de.hybris.platform.cms2.jalo.pages.ProductListPage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="ProductDetailsPage"
+			jaloclass="de.hybris.platform.cms2.jalo.pages.ProductDetailsPage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="BillingShippingAddressPage"
+			jaloclass="de.hybris.platform.cms2.jalo.pages.BillingShippingAddressPage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="CheckingBillingShippingAddressPage"
+			jaloclass="de.hybris.platform.cms2.jalo.pages.CheckingBillingShippingAddressPage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="ProductPurchasingPage"
+			jaloclass="de.hybris.platform.cms2.jalo.pages.ProductPurchasingPage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="CartPage" jaloclass="de.hybris.platform.cms2.jalo.pages.CartPage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="WishlistPage"
+			jaloclass="de.hybris.platform.cms2.jalo.pages.WishlistPage" extends="ContentPage"
+			autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="WishlistsPage"
+			jaloclass="de.hybris.platform.cms2.jalo.pages.WishlistsPage" extends="ContentPage"
+			autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="ContactUsPage"
+			jaloclass="de.hybris.platform.cms2.jalo.pages.ContactUsPage" extends="ContentPage"
+			autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="FAQPage" jaloclass="de.hybris.platform.cms2.jalo.pages.FAQPage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="MyAccountPage"
+			jaloclass="de.hybris.platform.cms2.jalo.pages.MyAccountPage" extends="ContentPage"
+			autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="RegistrationPage"
+			jaloclass="de.hybris.platform.cms2.jalo.pages.RegistrationPage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="PostRegistrationPage"
+			jaloclass="de.hybris.platform.cms2.jalo.pages.PostRegistrationPage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="ErrorPage" jaloclass="de.hybris.platform.cms2.jalo.pages.ErrorPage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<!-- CMS pages -->
 	</itemtypes>
 </items>

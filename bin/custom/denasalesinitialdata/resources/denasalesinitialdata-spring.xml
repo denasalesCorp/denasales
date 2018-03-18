@@ -89,5 +89,6 @@
         <property name="mediaService" ref="mediaService"/>
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean> -->
+    <bean id="denasalesSystemSetup" class="com.denasales.initialdata.setup.DenasalesSystemSetup"  parent="abstractCoreSystemSetup"/>
 			
 </beans>

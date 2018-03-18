@@ -50,12 +50,12 @@ INSERT_UPDATE SiteMapPage ; &siteMapPage                     ; code(code)[unique
                           ; ProductDescription               ; ProductDescription               ; daily                        ; 1.0                   ;                      ;  
                           ; Cart                             ; Cart                             ; daily                        ; 1.0                   ;                      ;  
                           ; FAQ                              ; FAQ                              ; daily                        ; 4.0                   ;                      ;  
-                          ; BillingShipping                  ; BillingShipping                  ; 1.0                          ;                       ;                      
-                          ; CheckingBillingShippingAddresses ; CheckingBillingShippingAddresses ; 1.0                          ;                       ;                      
-                          ; ProductPurchasing                ; ProductPurchasing                ; 1.0                          ;                       ;                      
-                          ; Wishlist                         ; Wishlist                         ; 1.0                          ;                       ;                      
-                          ; Wishlists                        ; Wishlists                        ; 1.0                          ;                       ;                      
-                          ; ContactUs                        ; ContactUs                        ; 4.0                          ;                       ;                      
+                          ; BillingShipping                  ; BillingShipping                  ; daily                        ; 1.0                   ;                      ;  
+                          ; CheckingBillingShippingAddresses ; CheckingBillingShippingAddresses ; daily                        ; 1.0                   ;                      ;  
+                          ; ProductPurchasing                ; ProductPurchasing                ; daily                        ; 1.0                   ;                      ;  
+                          ; Wishlist                         ; Wishlist                         ; daily                        ; 1.0                   ;                      ;  
+                          ; Wishlists                        ; Wishlists                        ; daily                        ; 1.0                   ;                      ;  
+                          ; ContactUs                        ; ContactUs                        ; daily                        ; 4.0                   ;                      ;  
                           ; PostRegistration                 ; PostRegistration                 ; daily                        ; 4.0                   ;                      ;  
                           
 INSERT_UPDATE SiteMapConfig ; &siteMapConfigId      ; configId[unique=true] ; siteMapLanguageCurrencies(&siteMapLanguageCurrency) ; siteMapPages(&siteMapPage) ; siteMapTemplate(&siteMapRenderer)[unique=true] ; customUrls         ;  

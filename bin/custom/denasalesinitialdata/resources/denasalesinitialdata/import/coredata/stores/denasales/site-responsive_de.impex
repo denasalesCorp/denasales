@@ -1,7 +1,7 @@
 # Language
 $lang=de
 $siteUid=denasales
-
+ 
 # Create CMS Site
-UPDATE CMSSite;$siteUid[unique=true];name[lang=$lang];locale[lang=$lang]
- ;;"Website Denasales";de_DE
+UPDATE CMSSite ; uid[unique=true] ; name[lang=$lang]    ; locale[lang=$lang] 
+               ; $siteUid         ; "Website Denasales" ; de_DE              

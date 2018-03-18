@@ -2,6 +2,7 @@ $productCatalog=denasalesProductCatalog
 $classificationCatalog=DenasalesClassification
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 $languages=de,en,es,es_CO,fr,hi,id,it,ja,ko,pt,ru,zh,zh_TW
+$lang=en
  
 # Product catalog
 INSERT_UPDATE Catalog ; id[unique=true] ; supplier(uid) ; defaultCatalog ; previewURLTemplate ; name[lang=$lang]          ;  ;  ;  ;  ;  
