@@ -74,7 +74,7 @@
 		<extension name='denasalescockpit' />
 		<extension name='denasalesfacades' />
 		<extension name='denasalesservices' />
-		<extension name='denasalesstorefront' />
+		<extension name='denasales' />
 		<extension name='denasalesinitialdata' />
 	</extensions>
 </hybrisconfig>
