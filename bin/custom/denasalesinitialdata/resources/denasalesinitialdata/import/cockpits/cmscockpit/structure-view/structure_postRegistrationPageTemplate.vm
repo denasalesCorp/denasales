@@ -1,0 +1,34 @@
+<div>
+	<table width="100%" cellspacing="0" style="margin:0;padding:0;table-layout:auto;border:1px solid #1E4EBF;">
+		<tbody>
+			<tr>
+				<td colspan="4" class="structureViewSection">
+					<cockpit code="SiteLogo" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="structureViewSection">
+					<cockpit code="HeaderLinks" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" style="vertical-align:top;" class="structureViewSection">
+					<cockpit code="Section1" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="structureViewSection" style="vertical-align:top;">
+					<cockpit code="Section2" />
+				</td>
+			</tr>		
+			<tr>
+				<td height="270px" colspan="4" class="structureViewSection">
+					<cockpit code="Footer" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div style="width:100%; border-top: 2px solid #bbb" class="cmsContentEditor">
+		<cockpit code="editor" />
+	</div>
+</div>

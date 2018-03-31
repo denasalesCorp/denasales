@@ -77,11 +77,10 @@
 	      	            !execution(* getPK(..))" />  	            
 	       <aop:pointcut id="profiledMethods" expression="execution(* *(..))" />	
 	  -->
-	
-    <bean id="denasalesservicesSystemSetup" class="com.denasales.services.setup.DenasalesservicesSystemSetup">
-        <!-- constructor arg injection example -->
-        <constructor-arg ref="denasalesservicesService"/>
-    </bean>
+
+	<!-- <bean id="denasalesservicesSystemSetup" class="com.denasales.services.setup.DenasalesservicesSystemSetup"> 
+		constructor arg injection example <constructor-arg ref="denasalesservicesService"/> 
+		</bean> -->
 
     <bean id="denasalesservicesService" class="com.denasales.services.service.impl.DefaultDenasalesservicesService">
         <!-- setter injection example -->

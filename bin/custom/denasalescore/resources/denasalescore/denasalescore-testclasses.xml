@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?><testclasses><denasalescore><testclass>com.denasales.core.jalo.DenasalescoreTest</testclass><testclass>com.denasales.core.service.impl.DefaultDenasalescoreServiceIntegrationTest</testclass></denasalescore></testclasses>
+<?xml version="1.0" encoding="utf-8"?><testclasses><denasalescore></denasalescore></testclasses>

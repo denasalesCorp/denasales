@@ -12,7 +12,7 @@ $parentCategoriesOnline=source(code, $catalogVersionOnline)[unique=true]
 $media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
 $mediasStaged=medias(code, $catalogVersionStaged)
 $mediasOnline=medias(code, $catalogVersionOnline)
-$siteResource=jar:com.denasales.initialdata.constants.DenasalesinitialdataConstants&/denasalesinitialdata/import/SAMPLE/images
+$siteResource=jar:com.denasales.initialdata.constants.DenasalesinitialdataConstants&/denasalesinitialdata/import/TEST/images
 $prices=Europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
 $taxGroup=Europe1PriceFactory_PTG(code)[default=us-sales-tax-full]
 $deliveryModes=deliveryModes(code)[default='premium-gross,premium-net,standard-gross,standard-net']
