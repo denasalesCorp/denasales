@@ -89,5 +89,17 @@
         <property name="mediaService" ref="mediaService"/>
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean> -->
+    
+    <bean id="footerComponentsDao" class="com.denasales.core.dao.impl.FooterComponentsDaoImpl">
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
+    
+    <bean id="footerColumnsParagraphComponentPrepareInterceptor" class="com.denasales.core.interceptors.FooterColumnsParagraphComponentPrepareInterceptor">
+	</bean>
+
+	<bean id="footerColumnsParagraphComponentPrepareInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="footerColumnsParagraphComponentPrepareInterceptor"/>
+		<property name="typeCode" value="CMSFooterColumnsParagraphComponent"/>
+	</bean>
 			
 </beans>

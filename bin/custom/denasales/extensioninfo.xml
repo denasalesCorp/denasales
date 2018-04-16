@@ -12,7 +12,8 @@
 
 	<extension abstractclassprefix="Generated" classprefix="Denasales" name="denasales" usemaven="false">		
         <requires-extension name="acceleratorstorefrontcommons"/>
-		<requires-extension name="yacceleratorfacades"/>
+		<!-- <requires-extension name="yacceleratorfacades"/> -->
+		<requires-extension name="denasalesfacades"/>
 
 		<webmodule jspcompile="false" webroot="/denasales"/>
 

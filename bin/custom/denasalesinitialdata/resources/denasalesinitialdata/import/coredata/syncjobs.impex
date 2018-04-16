@@ -2,7 +2,7 @@ $sourceProductCV=sourceVersion(catalog(id[default=denasalesProductCatalog]),vers
 $targetProductCV=targetVersion(catalog(id[default=denasalesProductCatalog]),version[default='Online'])[unique=true,default='denasalesProductCatalog:Online']
 $sourceContentCV=sourceVersion(catalog(id[default=denasalesContentCatalog]),version[default='Staged'])[unique=true,default='denasalesContentCatalog:Staged']
 $targetContentCV=targetVersion(catalog(id[default=denasalesContentCatalog]),version[default='Online'])[unique=true,default='denasalesContentCatalog:Online']
-$contentCatalogsRootTypes=rootTypes(code)[default='ContentPage,ContentSlot,PageTemplate,ContentSlotForTemplate']
+$contentCatalogsRootTypes=rootTypes(code)[default='CMSItem,CMSRelation']
  
 #Insert Product Catalogs Synchronization
 INSERT_UPDATE CatalogVersionSyncJob ; code[unique=true]                           ; $sourceProductCV ; $targetProductCV ;  

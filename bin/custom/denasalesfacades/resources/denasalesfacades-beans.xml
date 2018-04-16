@@ -65,5 +65,8 @@
     </bean>
 
 	-->
-
+    <bean class="com.denasales.facades.data.FooterColumnsData" >
+    	<property name="columnNames" type="java.util.List&lt; java.lang.String>" equals="true"/>
+    	<property name="rows" type="java.util.List&lt; java.util.List&lt; java.lang.String>>" equals="true"/>
+    </bean>
 </beans>

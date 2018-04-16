@@ -32,7 +32,7 @@
 	<alias name="defaultMultiStepCheckout" alias="multiStepCheckout" />
 	<bean id="defaultMultiStepCheckout" parent="checkoutStep">
 		<property name="checkoutGroup" ref="defaultCheckoutGroup"/>
-		<property name="checkoutStepValidator" ref="defaultMultiStepCheckoutValidator"/>
+		<!-- <property name="checkoutStepValidator" ref="defaultMultiStepCheckoutValidator"/> -->
 		<property name="transitions">
 			<map>
 				<entry key="previous" value-ref="REDIRECT_TO_CART"/>
@@ -46,7 +46,7 @@
 	<alias name="defaultDeliveryAddressCheckoutStep" alias="deliveryAddressCheckoutStep" />
 	<bean id="defaultDeliveryAddressCheckoutStep" parent="checkoutStep">
 		<property name="checkoutGroup" ref="defaultCheckoutGroup"/>
-		<property name="checkoutStepValidator" ref="deliveryAddressCheckoutValidator"/>
+		<!-- <property name="checkoutStepValidator" ref="deliveryAddressCheckoutValidator"/> -->
 		<property name="transitions">
 			<map merge="true">
 				<entry key="previous" value-ref="REDIRECT_TO_CART"/>
@@ -60,7 +60,7 @@
 	<alias name="defaultDeliveryMethodCheckoutStep" alias="deliveryMethodCheckoutStep" />
 	<bean id="defaultDeliveryMethodCheckoutStep"  parent="checkoutStep">
 		<property name="checkoutGroup" ref="defaultCheckoutGroup"/>
-		<property name="checkoutStepValidator" ref="deliveryMethodCheckoutValidator"/>
+		<!-- <property name="checkoutStepValidator" ref="deliveryMethodCheckoutValidator"/> -->
 		<property name="transitions">
 			<map merge="true">
 				<entry key="previous" value-ref="REDIRECT_TO_DELIVERY_ADDRESS"/>
@@ -74,7 +74,7 @@
 	<alias name="defaultPickupLocationCheckoutStep" alias="pickupLocationCheckoutStep" />
 	<bean id="defaultPickupLocationCheckoutStep" parent="checkoutStep">
 		<property name="checkoutGroup" ref="defaultCheckoutGroup"/>
-		<property name="checkoutStepValidator" ref="defaultPickupCheckoutValidator"/>
+		<!-- <property name="checkoutStepValidator" ref="defaultPickupCheckoutValidator"/> -->
 		<property name="transitions">
 			<map merge="true">
 				<entry key="previous" value-ref="REDIRECT_TO_DELIVERY_METHOD"/>
@@ -102,7 +102,7 @@
 	<alias name="defaultSummaryCheckoutStep" alias="summaryCheckoutStep" />
 	<bean id="defaultSummaryCheckoutStep"  parent="checkoutStep">
 		<property name="checkoutGroup" ref="defaultCheckoutGroup"/>
-		<property name="checkoutStepValidator" ref="defaultSummaryCheckoutValidator"/>
+		<!-- <property name="checkoutStepValidator" ref="defaultSummaryCheckoutValidator"/> -->
 		<property name="transitions">
 			<map merge="true">
 				<entry key="previous" value-ref="REDIRECT_TO_PAYMENT_METHOD"/>
@@ -118,7 +118,7 @@
 	<alias name="defaultResponsiveMultiStepCheckout" alias="responsiveMultiStepCheckout" />
 	<bean id="defaultResponsiveMultiStepCheckout" parent="checkoutStep">
 		<property name="checkoutGroup" ref="responsiveCheckoutGroup"/>
-		<property name="checkoutStepValidator" ref="defaultResponsiveMultiStepCheckoutValidator"/>
+		<!-- <property name="checkoutStepValidator" ref="defaultResponsiveMultiStepCheckoutValidator"/> -->
 		<property name="transitions">
 			<map>
 				<entry key="previous" value-ref="REDIRECT_TO_CART"/>
@@ -132,7 +132,7 @@
 	<alias name="defaultResponsiveDeliveryAddressCheckoutStep" alias="responsiveDeliveryAddressCheckoutStep" />
 	<bean id="defaultResponsiveDeliveryAddressCheckoutStep" parent="checkoutStep">
 		<property name="checkoutGroup" ref="responsiveCheckoutGroup"/>
-		<property name="checkoutStepValidator" ref="defaultResponsiveDeliveryAddressCheckoutValidator"/>
+		<!-- <property name="checkoutStepValidator" ref="defaultResponsiveDeliveryAddressCheckoutValidator"/> -->
 		<property name="transitions">
 			<map merge="true">
 				<entry key="previous" value-ref="REDIRECT_TO_CART"/>
@@ -146,7 +146,7 @@
 	<alias name="defaultResponsiveDeliveryMethodCheckoutStep" alias="responsiveDeliveryMethodCheckoutStep" />
 	<bean id="defaultResponsiveDeliveryMethodCheckoutStep"  parent="checkoutStep">
 		<property name="checkoutGroup" ref="responsiveCheckoutGroup"/>
-		<property name="checkoutStepValidator" ref="defaultResponsiveDeliveryMethodCheckoutValidator"/>
+		<!-- <property name="checkoutStepValidator" ref="defaultResponsiveDeliveryMethodCheckoutValidator"/> -->
 		<property name="transitions">
 			<map merge="true">
 				<entry key="previous" value-ref="REDIRECT_TO_DELIVERY_ADDRESS"/>
@@ -160,7 +160,7 @@
 	<alias name="defaultResponsivePaymentMethodCheckoutStep" alias="responsivePaymentMethodCheckoutStep" />
 	<bean id="defaultResponsivePaymentMethodCheckoutStep" parent="checkoutStep">
 		<property name="checkoutGroup" ref="responsiveCheckoutGroup"/>
-		<property name="checkoutStepValidator" ref="defaultResponsivePaymentMethodCheckoutValidator"/>
+		<!-- <property name="checkoutStepValidator" ref="defaultResponsivePaymentMethodCheckoutValidator"/> -->
 		<property name="transitions">
 			<map merge="true">
 				<entry key="previous" value-ref="REDIRECT_TO_DELIVERY_METHOD"/>
@@ -305,17 +305,17 @@
 		<property name="checkoutFacade" ref="checkoutFacade"/>
 	</bean>
 
-	<bean id="defaultMultiStepCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.DefaultMultiStepCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="deliveryAddressCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.DefaultDeliveryAddressCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<!-- <bean id="defaultMultiStepCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.DefaultMultiStepCheckoutStepValidator" parent="abstractCheckoutStepValidator" /> -->
+	<!-- <bean id="deliveryAddressCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.DefaultDeliveryAddressCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
 	<bean id="deliveryMethodCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.DefaultDeliveryMethodCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultPaymentMethodCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.DefaultPaymentCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultPickupCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.DefaultPickupCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultSummaryCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.DefaultSummaryCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+ -->	<bean id="defaultPaymentMethodCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.DefaultPaymentCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<!-- <bean id="defaultPickupCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.DefaultPickupCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultSummaryCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.DefaultSummaryCheckoutStepValidator" parent="abstractCheckoutStepValidator" /> -->
 
-	<bean id="defaultResponsiveMultiStepCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.ResponsiveMultiStepCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultResponsiveDeliveryAddressCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.ResponsiveDeliveryAddressCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultResponsiveDeliveryMethodCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.ResponsiveDeliveryMethodCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultResponsivePaymentMethodCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.ResponsivePaymentCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<!-- <bean id="defaultResponsiveMultiStepCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.ResponsiveMultiStepCheckoutStepValidator" parent="abstractCheckoutStepValidator" /> -->
+	<!-- <bean id="defaultResponsiveDeliveryAddressCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.ResponsiveDeliveryAddressCheckoutStepValidator" parent="abstractCheckoutStepValidator" /> -->
+	<!-- <bean id="defaultResponsiveDeliveryMethodCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.ResponsiveDeliveryMethodCheckoutStepValidator" parent="abstractCheckoutStepValidator" /> -->
+	<!-- <bean id="defaultResponsivePaymentMethodCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.ResponsivePaymentCheckoutStepValidator" parent="abstractCheckoutStepValidator" /> -->
 	<bean id="defaultResponsiveSummaryCheckoutValidator" class="com.denasales.storefront.checkout.steps.validation.impl.ResponsiveSummaryCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
 	
 	<!-- Validation -->

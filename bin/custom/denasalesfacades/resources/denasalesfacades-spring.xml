@@ -88,5 +88,22 @@
         <property name="mediaService" ref="mediaService"/>
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
+    
+    <bean id="footerComponentsFacade" class="com.denasales.facades.footer.impl.FooterComponentsFacadeImpl">
+        <property name="footerComponentsService" ref="footerComponentsService"/>
+        <property name="catalogVersionService" ref="catalogVersionService"/>
+        <property name="footerColumnsComponentConverter" ref="footerColumnsComponentConverter"/>
+    </bean>
+    
+    <bean id="footerColumnsComponentConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.denasales.facades.data.FooterColumnsData"/>
+		<property name="populators">
+			<list>
+				<ref bean="footerColumnsDataPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="footerColumnsDataPopulator" class="com.denasales.facades.populators.FooterColumnsDataPopulator"/>
 			
 </beans>

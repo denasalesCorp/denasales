@@ -51,30 +51,30 @@ UPDATE PageTemplate ; $contentCV[unique=true] ; uid[unique=true]                
 # Create ContentSlotNames
 # Each PageTemplate has a number of ContentSlotNames, with a list of valid components for the slot.
 # There are a standard set of slots and a number of specific slots for each template.
-# Standard slots are SiteLogo, HeaderLinks, MiniCart and NavigationBar (that all appear in the Header), and the Footer.
+# Standard slots are TopHeaderSlot, HeaderLinks, MiniCart and NavigationBar (that all appear in the Header), and the Footer.
                     
 # Error Page Template
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='ErrorPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                    ;                           ; logo                
+                              ; TopHeaderSlot     ;                                                                    ;                           ; logo                
                               ; HeaderLinks       ;                                                                    ;                           ; headerlinks         
-                              ; MiddleContent     ;                                                                    ; CMSParagraphComponent     
+                              ; MiddleContent     ;                                                                    ; CMSParagraphComponent     ;                     
                               ; Footer            ;                                                                    ;                           ; footer              
                               
 # Home Page Template          
-INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='HomePageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                   ;                           ; logo                
-                              ; HeaderLinks       ;                                                                   ;                           ; headerlinks         
-                              ; Section1          ;                                                                   ;                           ; wide                
-                              ; Section2          ;                                                                   ;                           ; wide                
-                              ; Section3          ;                                                                   ;                           ; wide                
-                              ; Section4          ;                                                                   ;                           ; wide                
-                              ; Section5          ;                                                                   ;                           ; wide                
-                              ; Footer            ;                                                                   ;                           ; wide                
+INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='HomePageTemplate'] ; validComponentTypes(code)                                                                                                                  ; compTypeGroup(code) 
+                              ; TopHeaderSlot     ;                                                                   ;                                                                                                                                            ; logo                
+                              ; HeaderLinks       ;                                                                   ;                                                                                                                                            ; headerlinks         
+                              ; Section1          ;                                                                   ;                                                                                                                                            ; wide                
+                              ; Section2          ;                                                                   ;                                                                                                                                            ; wide                
+                              ; Section3          ;                                                                   ;                                                                                                                                            ; wide                
+                              ; Section4          ;                                                                   ;                                                                                                                                            ; wide                
+                              ; Section5          ;                                                                   ;                                                                                                                                            ; wide                
+                              ; Footer            ;                                                                   ; CMSCopyrightParagraphComponent,CMSBackToTopParagraphComponent,CMSInternationalizationParagraphComponent,CMSFooterColumnsParagraphComponent ; wide                
                               
                               
 # Product List Page Template  
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='ProductListPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                          ;                           ; logo                
+                              ; TopHeaderSlot     ;                                                                          ;                           ; logo                
                               ; HeaderLinks       ;                                                                          ;                           ; headerlinks         
                               ; Section1          ;                                                                          ;                           ; wide                
                               ; Section2          ;                                                                          ;                           ; wide                
@@ -84,7 +84,7 @@ INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[uni
                               
 # Category Page Template      
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='CategoryPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                       ;                           ; logo                
+                              ; TopHeaderSlot     ;                                                                       ;                           ; logo                
                               ; HeaderLinks       ;                                                                       ;                           ; headerlinks         
                               ; Section1          ;                                                                       ;                           ; wide                
                               ; Section2          ;                                                                       ;                           ; wide                
@@ -95,7 +95,7 @@ INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[uni
                               
 # Product Details Page Template
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='ProductDetailsPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                             ;                           ; logo                
+                              ; TopHeaderSlot     ;                                                                             ;                           ; logo                
                               ; HeaderLinks       ;                                                                             ;                           ; headerlinks         
                               ; Section1          ;                                                                             ;                           ; wide                
                               ; Section2          ;                                                                             ;                           ; wide                
@@ -105,7 +105,7 @@ INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[uni
                               
 # Billing Shipping Address Page Template
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='BillingShippingAddressPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                                     ;                           ; logo                
+                              ; TopHeaderSlot     ;                                                                                     ;                           ; logo                
                               ; HeaderLinks       ;                                                                                     ;                           ; headerlinks         
                               ; Section1          ;                                                                                     ;                           ; wide                
                               ; Section2          ;                                                                                     ;                           ; wide                
@@ -116,7 +116,7 @@ INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[uni
                               
 # Checking Billing Shipping Address Page Template
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='CheckingBillingShippingAddressPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                                             ;                           ; logo                
+                              ; TopHeaderSlot     ;                                                                                             ;                           ; logo                
                               ; HeaderLinks       ;                                                                                             ;                           ; headerlinks         
                               ; Section1          ;                                                                                             ;                           ; wide                
                               ; Section2          ;                                                                                             ;                           ; wide                
@@ -127,7 +127,7 @@ INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[uni
                               
 # Product Purchasing Page Template
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='ProductPurchasingPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                                ;                           ; logo                
+                              ; TopHeaderSlot     ;                                                                                ;                           ; logo                
                               ; HeaderLinks       ;                                                                                ;                           ; headerlinks         
                               ; Section1          ;                                                                                ;                           ; wide                
                               ; Section2          ;                                                                                ;                           ; wide                
@@ -137,7 +137,7 @@ INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[uni
                               
 # Cart Page Template          
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='CartPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                   ;                           ; logo                
+                              ; TopHeaderSlot     ;                                                                   ;                           ; logo                
                               ; HeaderLinks       ;                                                                   ;                           ; headerlinks         
                               ; Section1          ;                                                                   ;                           ; wide                
                               ; Section2          ;                                                                   ;                           ; wide                
@@ -146,7 +146,7 @@ INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[uni
                               
 # Wishlist Template           
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='WishlistPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                       ;                           ; logo                
+                              ; TopHeaderSlot     ;                                                                       ;                           ; logo                
                               ; HeaderLinks       ;                                                                       ;                           ; headerlinks         
                               ; Section1          ;                                                                       ;                           ; wide                
                               ; Section2          ;                                                                       ;                           ; wide                
@@ -155,7 +155,7 @@ INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[uni
                               
 # Wishlists Template          
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='WishlistsPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                        ;                           ; logo                
+                              ; TopHeaderSlot     ;                                                                        ;                           ; logo                
                               ; HeaderLinks       ;                                                                        ;                           ; headerlinks         
                               ; Section1          ;                                                                        ;                           ; wide                
                               ; Section2          ;                                                                        ;                           ; wide                
@@ -164,7 +164,7 @@ INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[uni
                               
 # Contact Us Page Template    
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='ContactUsPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                        ;                           ; logo                
+                              ; TopHeaderSlot     ;                                                                        ;                           ; logo                
                               ; HeaderLinks       ;                                                                        ;                           ; headerlinks         
                               ; Section1          ;                                                                        ;                           ; wide                
                               ; Section2          ;                                                                        ;                           ; wide                
@@ -173,7 +173,7 @@ INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[uni
                               
 # FAQ Page Template           
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='FAQPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                  ;                           ; logo                
+                              ; TopHeaderSlot     ;                                                                  ;                           ; logo                
                               ; HeaderLinks       ;                                                                  ;                           ; headerlinks         
                               ; Section1          ;                                                                  ;                           ; wide                
                               ; Section2          ;                                                                  ;                           ; wide                
@@ -182,7 +182,7 @@ INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[uni
                               
 # My Account Page Template    
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='MyAccountPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                        ;                           ; logo                
+                              ; TopHeaderSlot     ;                                                                        ;                           ; logo                
                               ; HeaderLinks       ;                                                                        ;                           ; headerlinks         
                               ; Section1          ;                                                                        ;                           ; wide                
                               ; Section2          ;                                                                        ;                           ; wide                
@@ -191,7 +191,7 @@ INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[uni
                               
 # Registration Page Template  
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='RegistrationPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                           ;                           ; logo                
+                              ; TopHeaderSlot     ;                                                                           ;                           ; logo                
                               ; HeaderLinks       ;                                                                           ;                           ; headerlinks         
                               ; Section1          ;                                                                           ;                           ; wide                
                               ; Section2          ;                                                                           ;                           ; wide                
@@ -199,161 +199,294 @@ INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[uni
                               
 # Post Registration Page Template
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='PostRegistrationPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) 
-                              ; SiteLogo          ;                                                                               ;                           ; logo                
+                              ; TopHeaderSlot     ;                                                                               ;                           ; logo                
                               ; HeaderLinks       ;                                                                               ;                           ; headerlinks         
                               ; Section1          ;                                                                               ;                           ; wide                
                               ; Section2          ;                                                                               ;                           ; wide                
                               ; Footer            ;                                                                               ;                           ; footer              
                               
                               
-# Create Content Slots        
-INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]  ; name                   ; active 
-                          ;                         ; SiteLogoSlot      ; Default Site Logo Slot ; true   
-                          ;                         ; FooterSlot        ; Footer                 ; true   
-                          ;                         ; HeaderLinksSlot   ; Header links           ; true   
-                          ;                         ; MiddleContentSlot ; Middle Content Slot    ; true   
-                          ;                         ; Section1          ; Content Slot           ; true   
-                          ;                         ; Section2          ; Content Slot           ; true   
-                          ;                         ; Section3          ; Content Slot           ; true   
-                          ;                         ; Section4          ; Content Slot           ; true   
-                          ;                         ; Section5          ; Content Slot           ; true   
+#Components                   
+INSERT_UPDATE CMSBackToTopParagraphComponent ; $contentCV[unique=true] ; uid[unique=true]            ; name                        ; &componentRef               
+                                             ;                         ; BackToTopParagraphComponent ; Back to top button for page ; BackToTopParagraphComponent 
+                                             
+INSERT_UPDATE CMSCopyrightParagraphComponent ; $contentCV[unique=true] ; uid[unique=true]            ; name      ; &componentRef               
+                                             ;                         ; CopyrightParagraphComponent ; Copyright ; CopyrightParagraphComponent 
+                                             
+INSERT_UPDATE CMSInternationalizationParagraphComponent ; $contentCV[unique=true] ; uid[unique=true]                       ; name                           ; &componentRef                          
+                                                        ;                         ; InternationalizationParagraphComponent ; Internationalization Component ; InternationalizationParagraphComponent 
+                                                        
+INSERT_UPDATE CMSFooterColumnsParagraphComponent ; $contentCV[unique=true] ; uid[unique=true]                ; name                     ; &componentRef                   
+                                                 ;                         ; footerColumnsParagraphComponent ; Footer Columns Component ; footerColumnsParagraphComponent 
+                                                 
+INSERT_UPDATE DenasalesSearchBoxComponent ; $contentCV[unique=true] ; uid[unique=true]            ; name                           ; &componentRef               
+                                          ;                         ; denasalesSearchBoxComponent ; Denasales Search box Component ; denasalesSearchBoxComponent 
+                                          
+INSERT_UPDATE DenasalesLogoComponent ; $contentCV[unique=true] ; uid[unique=true]       ; name                     ; &componentRef          
+                                     ;                         ; denasalesLogoComponent ; Denasales Logo Component ; denasalesLogoComponent 
+                                     
+INSERT_UPDATE DenasalesMiniCartComponent ; $contentCV[unique=true] ; uid[unique=true]           ; name                          ; &componentRef              
+                                         ;                         ; denasalesMiniCartComponent ; Denasales Mini Cart Component ; denasalesMiniCartComponent 
+                                         
+INSERT_UPDATE DenasalesMiniAccountComponent ; $contentCV[unique=true] ; uid[unique=true]              ; name                             ; &componentRef                 
+                                            ;                         ; denasalesMiniAccountComponent ; Denasales Mini Account Component ; denasalesMiniAccountComponent 
+                                            
+INSERT_UPDATE DenasalesBreadcrumbComponent ; $contentCV[unique=true] ; uid[unique=true]             ; name                           ; &componentRef                
+                                           ;                         ; denasalesBreadcrumbComponent ; Denasales Breadcrumb Component ; denasalesBreadcrumbComponent 
+                                           
+INSERT_UPDATE DenasalesMiniWishlistComponent ; $contentCV[unique=true] ; uid[unique=true]               ; name                              ; &componentRef                  
+                                             ;                         ; denasalesMiniWishlistComponent ; Denasales Mini Wishlist Component ; denasalesMiniWishlistComponent 
+                                             
+INSERT_UPDATE DenasalesOverHeaderAdvertComponent ; $contentCV[unique=true] ; uid[unique=true]                   ; name                                   ; &componentRef                      
+                                                 ;                         ; denasalesOverHeaderAdvertComponent ; Denasales Over Header Advert Component ; denasalesOverHeaderAdvertComponent 
+                                                 
+INSERT_UPDATE DenasalesMainAccordionAdvertComponent ; $contentCV[unique=true] ; uid[unique=true]                      ; name                                      ; &componentRef                         
+                                                    ;                         ; denasalesMainAccordionAdvertComponent ; Denasales Main Accordion Advert Component ; denasalesMainAccordionAdvertComponent 
+                                                    
+INSERT_UPDATE DenasalesDiscountProductsComponent ; $contentCV[unique=true] ; uid[unique=true]                  ; name                                  ; &componentRef                     
+                                                 ;                         ; discountProductsSection2-Homepage ; Denasales Discount Products Component ; discountProductsSection2-Homepage 
+                                                 ;                         ; discountProductsSection4-Homepage ; Denasales Discount Products Component ; discountProductsSection4-Homepage 
+                                                 
+INSERT_UPDATE DenasalesPopularProductsComponent ; $contentCV[unique=true] ; uid[unique=true]                  ; name                                 ; &componentRef                     
+                                                ;                         ; denasalesPopularProductsComponent ; Denasales Popular Products Component ; denasalesPopularProductsComponent 
+                                                
+INSERT_UPDATE DenasalesSubscribeProductsComponent ; $contentCV[unique=true] ; uid[unique=true]                    ; name                                   ; &componentRef                       
+                                                  ;                         ; denasalesSubscribeProductsComponent ; Denasales Subscribe Products Component ; denasalesSubscribeProductsComponent 
+                                                  
+                                                  
+# Create Content Slots                            
+INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]                                ; name                   ; active ; cmsComponents(&componentRef)                                                                                                                                            
+                          ;                         ; TopHeaderSlot                                   ; Default Site Logo Slot ; true   ; denasalesOverHeaderAdvertComponent                                                                                                                                      
+                          ;                         ; FooterSlot                                      ; Footer                 ; true   ; CopyrightParagraphComponent,InternationalizationParagraphComponent,footerColumnsParagraphComponent,BackToTopParagraphComponent                                          
+                          ;                         ; HeaderLinksSlot                                 ; Header links           ; true   ; denasalesSearchBoxComponent,denasalesLogoComponent,denasalesMiniCartComponent,denasalesMiniAccountComponent,denasalesBreadcrumbComponent,denasalesMiniWishlistComponent 
+                          ;                         ; MiddleContentSlot                               ; Middle Content Slot    ; true   ;                                                                                                                                                                         
+                          ;                         ; Section1Slot-Homepage                           ; Content Slot           ; true   ; denasalesMainAccordionAdvertComponent                                                                                                                                   
+                          ;                         ; Section2Slot-Homepage                           ; Content Slot           ; true   ; discountProductsSection2-Homepage                                                                                                                                       
+                          ;                         ; Section3Slot-Homepage                           ; Content Slot           ; true   ; denasalesPopularProductsComponent                                                                                                                                       
+                          ;                         ; Section4Slot-Homepage                           ; Content Slot           ; true   ; discountProductsSection4-Homepage                                                                                                                                       
+                          ;                         ; Section5Slot-Homepage                           ; Content Slot           ; true   ; denasalesSubscribeProductsComponent                                                                                                                                     
+                          ;                         ; Section1Slot-ProductListPage                    ; Content Slot           ; true   
+                          ;                         ; Section2Slot-ProductListPage                    ; Content Slot           ; true   
+                          ;                         ; Section3Slot-ProductListPage                    ; Content Slot           ; true   
+                          ;                         ; Section4Slot-ProductListPage                    ; Content Slot           ; true   
+                          ;                         ; Section1Slot-CategoryPage                       ; Content Slot           ; true   
+                          ;                         ; Section2Slot-CategoryPage                       ; Content Slot           ; true   
+                          ;                         ; Section3Slot-CategoryPage                       ; Content Slot           ; true   
+                          ;                         ; Section4Slot-CategoryPage                       ; Content Slot           ; true   
+                          ;                         ; Section1Slot-ProductDetailsPage                 ; Content Slot           ; true   
+                          ;                         ; Section2Slot-ProductDetailsPage                 ; Content Slot           ; true   
+                          ;                         ; Section3Slot-ProductDetailsPage                 ; Content Slot           ; true   
+                          ;                         ; Section4Slot-ProductDetailsPage                 ; Content Slot           ; true   
+                          ;                         ; Section1Slot-BillingShippingAddressPage         ; Content Slot           ; true   
+                          ;                         ; Section2Slot-BillingShippingAddressPage         ; Content Slot           ; true   
+                          ;                         ; Section3Slot-BillingShippingAddressPage         ; Content Slot           ; true   
+                          ;                         ; Section4Slot-BillingShippingAddressPage         ; Content Slot           ; true   
+                          ;                         ; Section5Slot-BillingShippingAddressPage         ; Content Slot           ; true   
+                          ;                         ; Section1Slot-CheckingBillingShippingAddressPage ; Content Slot           ; true   
+                          ;                         ; Section2Slot-CheckingBillingShippingAddressPage ; Content Slot           ; true   
+                          ;                         ; Section3Slot-CheckingBillingShippingAddressPage ; Content Slot           ; true   
+                          ;                         ; Section4Slot-CheckingBillingShippingAddressPage ; Content Slot           ; true   
+                          ;                         ; Section5Slot-CheckingBillingShippingAddressPage ; Content Slot           ; true   
+                          ;                         ; Section1Slot-WishlistPage                       ; Content Slot           ; true   
+                          ;                         ; Section2Slot-WishlistPage                       ; Content Slot           ; true   
+                          ;                         ; Section3Slot-WishlistPage                       ; Content Slot           ; true   
+                          ;                         ; Section1Slot-WishlistsPage                      ; Content Slot           ; true   
+                          ;                         ; Section2Slot-WishlistsPage                      ; Content Slot           ; true   
+                          ;                         ; Section3Slot-WishlistsPage                      ; Content Slot           ; true   
+                          ;                         ; Section1Slot-ContactUsPage                      ; Content Slot           ; true   
+                          ;                         ; Section2Slot-ContactUsPage                      ; Content Slot           ; true   
+                          ;                         ; Section3Slot-ContactUsPage                      ; Content Slot           ; true   
+                          ;                         ; Section1Slot-FAQPage                            ; Content Slot           ; true   
+                          ;                         ; Section2Slot-FAQPage                            ; Content Slot           ; true   
+                          ;                         ; Section3Slot-FAQPage                            ; Content Slot           ; true   
+                          ;                         ; Section1Slot-MyAccountPage                      ; Content Slot           ; true   
+                          ;                         ; Section2Slot-MyAccountPage                      ; Content Slot           ; true   
+                          ;                         ; Section3Slot-MyAccountPage                      ; Content Slot           ; true   
+                          ;                         ; Section1Slot-RegistrationPage                   ; Content Slot           ; true   
+                          ;                         ; Section2Slot-RegistrationPage                   ; Content Slot           ; true   
+                          ;                         ; Section1Slot-PostRegistrationPage               ; Content Slot           ; true   
+                          ;                         ; Section2Slot-PostRegistrationPage               ; Content Slot           ; true   
+                          ;                         ; Section1Slot-ProductPurchasingPage              ; Content Slot           ; true   
+                          ;                         ; Section2Slot-ProductPurchasingPage              ; Content Slot           ; true   
+                          ;                         ; Section3Slot-ProductPurchasingPage              ; Content Slot           ; true   
+                          ;                         ; Section4Slot-ProductPurchasingPage              ; Content Slot           ; true   
+                          ;                         ; Section1Slot-CartPage                           ; Content Slot           ; true   
+                          ;                         ; Section2Slot-CartPage                           ; Content Slot           ; true   
+                          ;                         ; Section3Slot-CartPage                           ; Content Slot           ; true   
                           
-# Bind Content Slots to Page Templates
-INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]     ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='HomePageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
-                                     ;                         ; SiteLogo-HomePage    ; SiteLogo              ;                                                                       ; SiteLogoSlot                             ; true           
-                                     ;                         ; HeaderLinks-HomePage ; HeaderLinks           ;                                                                       ; HeaderLinksSlot                          ; true           
-                                     ;                         ; Section1-HomePage    ; Section1              ;                                                                       ; Section1                                 ; true           
-                                     ;                         ; Section2-HomePage    ; Section2              ;                                                                       ; Section2                                 ; true           
-                                     ;                         ; Section3-HomePage    ; Section3              ;                                                                       ; Section3                                 ; true           
-                                     ;                         ; Section4-HomePage    ; Section4              ;                                                                       ; Section4                                 ; true           
-                                     ;                         ; Section5-HomePage    ; Section5              ;                                                                       ; Section5                                 ; true           
-                                     ;                         ; Footer-HomePage      ; Footer                ;                                                                       ; FooterSlot                               ; true           
+                          
+                          
+                          
+# Bind Content Slots to Page Templates and Pages
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]       ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='HomePageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
+                                     ;                         ; TopHeaderSlot-HomePage ; TopHeaderSlot         ;                                                                       ; TopHeaderSlot                            ; true           
+                                     ;                         ; HeaderLinks-HomePage   ; HeaderLinks           ;                                                                       ; HeaderLinksSlot                          ; true           
+                                     ;                         ; Footer-HomePage        ; Footer                ;                                                                       ; FooterSlot                               ; true           
                                      
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]  ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='homepage'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; Section1-HomePage ; Section1              ;                                                       ; Section1Slot-Homepage                    ;  ;  ;  
+                                 ;                         ; Section2-HomePage ; Section2              ;                                                       ; Section2Slot-Homepage                    ;  ;  ;  
+                                 ;                         ; Section3-HomePage ; Section3              ;                                                       ; Section3Slot-Homepage                    ;  ;  ;  
+                                 ;                         ; Section4-HomePage ; Section4              ;                                                       ; Section4Slot-Homepage                    ;  ;  ;  
+                                 ;                         ; Section5-HomePage ; Section5              ;                                                       ; Section5Slot-Homepage                    ;  ;  ;  
+                                 
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]              ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='ProductListPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
+                                     ;                         ; TopHeaderSlot-ProductListPage ; TopHeaderSlot         ;                                                                              ; TopHeaderSlot                            ; true           
+                                     ;                         ; HeaderLinks-ProductListPage   ; HeaderLinks           ;                                                                              ; HeaderLinksSlot                          ; true           
+                                     ;                         ; Footer-ProductListPage        ; Footer                ;                                                                              ; FooterSlot                               ; true           
                                      
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]         ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='productListPage'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; Section1-ProductListPage ; Section1              ;                                                              ; Section1Slot-ProductListPage             ;  ;  ;  
+                                 ;                         ; Section2-ProductListPage ; Section2              ;                                                              ; Section2Slot-ProductListPage             ;  ;  ;  
+                                 ;                         ; Section3-ProductListPage ; Section3              ;                                                              ; Section3Slot-ProductListPage             ;  ;  ;  
+                                 ;                         ; Section4-ProductListPage ; Section4              ;                                                              ; Section4Slot-ProductListPage             ;  ;  ;  
+                                 
+                                 
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]           ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='CategoryPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
+                                     ;                         ; TopHeaderSlot-CategoryPage ; TopHeaderSlot         ;                                                                           ; TopHeaderSlot                            ; true           
+                                     ;                         ; HeaderLinks-CategoryPage   ; HeaderLinks           ;                                                                           ; HeaderLinksSlot                          ; true           
+                                     ;                         ; Footer-CategoryPage        ; Footer                ;                                                                           ; FooterSlot                               ; true           
                                      
-INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]            ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='ProductListPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
-                                     ;                         ; SiteLogo-ProductListPage    ; SiteLogo              ;                                                                              ; SiteLogoSlot                             ; true           
-                                     ;                         ; HeaderLinks-ProductListPage ; HeaderLinks           ;                                                                              ; HeaderLinksSlot                          ; true           
-                                     ;                         ; Section1-ProductListPage    ; Section1              ;                                                                              ; Section1                                 ; true           
-                                     ;                         ; Section2-ProductListPage    ; Section2              ;                                                                              ; Section2                                 ; true           
-                                     ;                         ; Section3-ProductListPage    ; Section3              ;                                                                              ; Section3                                 ; true           
-                                     ;                         ; Section4-ProductListPage    ; Section4              ;                                                                              ; Section4                                 ; true           
-                                     ;                         ; Footer-ProductListPage      ; Footer                ;                                                                              ; FooterSlot                               ; true           
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]      ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='categoryPage'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; Section1-CategoryPage ; Section1              ;                                                           ; Section1Slot-CategoryPage                ;  ;  ;  
+                                 ;                         ; Section2-CategoryPage ; Section2              ;                                                           ; Section2Slot-CategoryPage                ;  ;  ;  
+                                 ;                         ; Section3-CategoryPage ; Section3              ;                                                           ; Section3Slot-CategoryPage                ;  ;  ;  
+                                 ;                         ; Section4-CategoryPage ; Section4              ;                                                           ; Section4Slot-CategoryPage                ;  ;  ;  
+                                 
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]                 ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='ProductDetailsPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
+                                     ;                         ; TopHeaderSlot-ProductDetailsPage ; TopHeaderSlot         ;                                                                                 ; TopHeaderSlot                            ; true           
+                                     ;                         ; HeaderLinks-ProductDetailsPage   ; HeaderLinks           ;                                                                                 ; HeaderLinksSlot                          ; true           
+                                     ;                         ; Footer-ProductDetailsPage        ; Footer                ;                                                                                 ; FooterSlot                               ; true           
                                      
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]            ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='productDetailsPage'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; Section1-ProductDetailsPage ; Section1              ;                                                                 ; Section1Slot-ProductDetailsPage          ;  ;  ;  
+                                 ;                         ; Section2-ProductDetailsPage ; Section2              ;                                                                 ; Section2Slot-ProductDetailsPage          ;  ;  ;  
+                                 ;                         ; Section3-ProductDetailsPage ; Section3              ;                                                                 ; Section3Slot-ProductDetailsPage          ;  ;  ;  
+                                 ;                         ; Section4-ProductDetailsPage ; Section4              ;                                                                 ; Section4Slot-ProductDetailsPage          ;  ;  ;  
+                                 
+                                 
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]                         ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='BillingShippingAddressPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
+                                     ;                         ; TopHeaderSlot-BillingShippingAddressPage ; TopHeaderSlot         ;                                                                                         ; TopHeaderSlot                            ; true           
+                                     ;                         ; HeaderLinks-BillingShippingAddressPage   ; HeaderLinks           ;                                                                                         ; HeaderLinksSlot                          ; true           
+                                     ;                         ; Footer-BillingShippingAddressPage        ; Footer                ;                                                                                         ; FooterSlot                               ; true           
                                      
-INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]         ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='CategoryPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
-                                     ;                         ; SiteLogo-CategoryPage    ; SiteLogo              ;                                                                           ; SiteLogoSlot                             ; true           
-                                     ;                         ; HeaderLinks-CategoryPage ; HeaderLinks           ;                                                                           ; HeaderLinksSlot                          ; true           
-                                     ;                         ; Section1-CategoryPage    ; Section1              ;                                                                           ; Section1                                 ; true           
-                                     ;                         ; Section2-CategoryPage    ; Section2              ;                                                                           ; Section2                                 ; true           
-                                     ;                         ; Section3-CategoryPage    ; Section3              ;                                                                           ; Section3                                 ; true           
-                                     ;                         ; Section4-CategoryPage    ; Section4              ;                                                                           ; Section4                                 ; true           
-                                     ;                         ; Footer-CategoryPage      ; Footer                ;                                                                           ; FooterSlot                               ; true           
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]                    ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='billingShippingAddressPage'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; Section1-BillingShippingAddressPage ; Section1              ;                                                                         ; Section1Slot-BillingShippingAddressPage  ;  ;  ;  
+                                 ;                         ; Section2-BillingShippingAddressPage ; Section2              ;                                                                         ; Section2Slot-BillingShippingAddressPage  ;  ;  ;  
+                                 ;                         ; Section3-BillingShippingAddressPage ; Section3              ;                                                                         ; Section3Slot-BillingShippingAddressPage  ;  ;  ;  
+                                 ;                         ; Section4-BillingShippingAddressPage ; Section4              ;                                                                         ; Section4Slot-BillingShippingAddressPage  ;  ;  ;  
+                                 ;                         ; Section5-BillingShippingAddressPage ; Section5              ;                                                                         ; Section5Slot-BillingShippingAddressPage  ;  ;  ;  
+                                 
+                                 
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]                                 ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='CheckingBillingShippingAddressPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
+                                     ;                         ; TopHeaderSlot-CheckingBillingShippingAddressPage ; TopHeaderSlot         ;                                                                                                 ; TopHeaderSlot                            ; true           
+                                     ;                         ; HeaderLinks-CheckingBillingShippingAddressPage   ; HeaderLinks           ;                                                                                                 ; HeaderLinksSlot                          ; true           
+                                     ;                         ; Footer-CheckingBillingShippingAddressPage        ; Footer                ;                                                                                                 ; FooterSlot                               ; true           
                                      
-INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]               ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='ProductDetailsPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
-                                     ;                         ; SiteLogo-ProductDetailsPage    ; SiteLogo              ;                                                                                 ; SiteLogoSlot                             ; true           
-                                     ;                         ; HeaderLinks-ProductDetailsPage ; HeaderLinks           ;                                                                                 ; HeaderLinksSlot                          ; true           
-                                     ;                         ; Section1-ProductDetailsPage    ; Section1              ;                                                                                 ; Section1                                 ; true           
-                                     ;                         ; Section2-ProductDetailsPage    ; Section2              ;                                                                                 ; Section2                                 ; true           
-                                     ;                         ; Section3-ProductDetailsPage    ; Section3              ;                                                                                 ; Section3                                 ; true           
-                                     ;                         ; Section4-ProductDetailsPage    ; Section4              ;                                                                                 ; Section4                                 ; true           
-                                     ;                         ; Footer-ProductDetailsPage      ; Footer                ;                                                                                 ; FooterSlot                               ; true           
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]                            ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='checkingBillingShippingAddressPage'] ; contentSlot(uid,$contentCV)[unique=true]        ;  ;  ;  
+                                 ;                         ; Section1-CheckingBillingShippingAddressPage ; Section1              ;                                                                                 ; Section1Slot-CheckingBillingShippingAddressPage ;  ;  ;  
+                                 ;                         ; Section2-CheckingBillingShippingAddressPage ; Section2              ;                                                                                 ; Section2Slot-CheckingBillingShippingAddressPage ;  ;  ;  
+                                 ;                         ; Section3-CheckingBillingShippingAddressPage ; Section3              ;                                                                                 ; Section3Slot-CheckingBillingShippingAddressPage ;  ;  ;  
+                                 ;                         ; Section4-CheckingBillingShippingAddressPage ; Section4              ;                                                                                 ; Section4Slot-CheckingBillingShippingAddressPage ;  ;  ;  
+                                 ;                         ; Section5-CheckingBillingShippingAddressPage ; Section5              ;                                                                                 ; Section5Slot-CheckingBillingShippingAddressPage ;  ;  ;  
+                                 
+                                 
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]                    ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='ProductPurchasingPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
+                                     ;                         ; TopHeaderSlot-ProductPurchasingPage ; TopHeaderSlot         ;                                                                                    ; TopHeaderSlot                            ; true           
+                                     ;                         ; HeaderLinks-ProductPurchasingPage   ; HeaderLinks           ;                                                                                    ; HeaderLinksSlot                          ; true           
+                                     ;                         ; Footer-ProductPurchasingPage        ; Footer                ;                                                                                    ; FooterSlot                               ; true           
                                      
-INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]                       ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='BillingShippingAddressPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
-                                     ;                         ; SiteLogo-BillingShippingAddressPage    ; SiteLogo              ;                                                                                         ; SiteLogoSlot                             ; true           
-                                     ;                         ; HeaderLinks-BillingShippingAddressPage ; HeaderLinks           ;                                                                                         ; HeaderLinksSlot                          ; true           
-                                     ;                         ; Section1-BillingShippingAddressPage    ; Section1              ;                                                                                         ; Section1                                 ; true           
-                                     ;                         ; Section2-BillingShippingAddressPage    ; Section2              ;                                                                                         ; Section2                                 ; true           
-                                     ;                         ; Section3-BillingShippingAddressPage    ; Section3              ;                                                                                         ; Section3                                 ; true           
-                                     ;                         ; Section4-BillingShippingAddressPage    ; Section4              ;                                                                                         ; Section4                                 ; true           
-                                     ;                         ; Section5-BillingShippingAddressPage    ; Section5              ;                                                                                         ; Section5                                 ; true           
-                                     ;                         ; Footer-BillingShippingAddressPage      ; Footer                ;                                                                                         ; FooterSlot                               ; true           
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]               ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='productPurchasingPage'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; Section1-ProductPurchasingPage ; Section1              ;                                                                    ; Section1Slot-ProductPurchasingPage       ;  ;  ;  
+                                 ;                         ; Section2-ProductPurchasingPage ; Section2              ;                                                                    ; Section2Slot-ProductPurchasingPage       ;  ;  ;  
+                                 ;                         ; Section3-ProductPurchasingPage ; Section3              ;                                                                    ; Section3Slot-ProductPurchasingPage       ;  ;  ;  
+                                 ;                         ; Section4-ProductPurchasingPage ; Section4              ;                                                                    ; Section4Slot-ProductPurchasingPage       ;  ;  ;  
+                                 
+                                 
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]       ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='CartPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
+                                     ;                         ; TopHeaderSlot-CartPage ; TopHeaderSlot         ;                                                                       ; TopHeaderSlot                            ; true           
+                                     ;                         ; HeaderLinks-CartPage   ; HeaderLinks           ;                                                                       ; HeaderLinksSlot                          ; true           
+                                     ;                         ; Footer-CartPage        ; Footer                ;                                                                       ; FooterSlot                               ; true           
                                      
-INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]                               ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='CheckingBillingShippingAddressPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
-                                     ;                         ; SiteLogo-CheckingBillingShippingAddressPage    ; SiteLogo              ;                                                                                                 ; SiteLogoSlot                             ; true           
-                                     ;                         ; HeaderLinks-CheckingBillingShippingAddressPage ; HeaderLinks           ;                                                                                                 ; HeaderLinksSlot                          ; true           
-                                     ;                         ; Section1-CheckingBillingShippingAddressPage    ; Section1              ;                                                                                                 ; Section1                                 ; true           
-                                     ;                         ; Section2-CheckingBillingShippingAddressPage    ; Section2              ;                                                                                                 ; Section2                                 ; true           
-                                     ;                         ; Section3-CheckingBillingShippingAddressPage    ; Section3              ;                                                                                                 ; Section3                                 ; true           
-                                     ;                         ; Section4-CheckingBillingShippingAddressPage    ; Section4              ;                                                                                                 ; Section4                                 ; true           
-                                     ;                         ; Section5-CheckingBillingShippingAddressPage    ; Section5              ;                                                                                                 ; Section5                                 ; true           
-                                     ;                         ; Footer-CheckingBillingShippingAddressPage      ; Footer                ;                                                                                                 ; FooterSlot                               ; true           
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]  ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='cartPage'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; Section1-CartPage ; Section1              ;                                                       ; Section1Slot-CartPage                    ;  ;  ;  
+                                 ;                         ; Section2-CartPage ; Section2              ;                                                       ; Section2Slot-CartPage                    ;  ;  ;  
+                                 ;                         ; Section3-CartPage ; Section3              ;                                                       ; Section3Slot-CartPage                    ;  ;  ;  
+                                 
+                                 
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]           ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='WishlistPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
+                                     ;                         ; TopHeaderSlot-WishlistPage ; TopHeaderSlot         ;                                                                           ; TopHeaderSlot                            ; true           
+                                     ;                         ; HeaderLinks-WishlistPage   ; HeaderLinks           ;                                                                           ; HeaderLinksSlot                          ; true           
+                                     ;                         ; Footer-WishlistPage        ; Footer                ;                                                                           ; FooterSlot                               ; true           
                                      
-INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]                  ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='ProductPurchasingPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
-                                     ;                         ; SiteLogo-ProductPurchasingPage    ; SiteLogo              ;                                                                                    ; SiteLogoSlot                             ; true           
-                                     ;                         ; HeaderLinks-ProductPurchasingPage ; HeaderLinks           ;                                                                                    ; HeaderLinksSlot                          ; true           
-                                     ;                         ; Section1-ProductPurchasingPage    ; Section1              ;                                                                                    ; Section1                                 ; true           
-                                     ;                         ; Section2-ProductPurchasingPage    ; Section2              ;                                                                                    ; Section2                                 ; true           
-                                     ;                         ; Section3-ProductPurchasingPage    ; Section3              ;                                                                                    ; Section3                                 ; true           
-                                     ;                         ; Section4-ProductPurchasingPage    ; Section4              ;                                                                                    ; Section4                                 ; true           
-                                     ;                         ; Footer-ProductPurchasingPage      ; Footer                ;                                                                                    ; FooterSlot                               ; true           
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]      ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='wishlistPage'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; Section1-WishlistPage ; Section1              ;                                                           ; Section1Slot-WishlistPage                ;  ;  ;  
+                                 ;                         ; Section2-WishlistPage ; Section2              ;                                                           ; Section2Slot-WishlistPage                ;  ;  ;  
+                                 ;                         ; Section3-WishlistPage ; Section3              ;                                                           ; Section3Slot-WishlistPage                ;  ;  ;  
+                                 
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]            ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='WishlistsPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
+                                     ;                         ; TopHeaderSlot-WishlistsPage ; TopHeaderSlot         ;                                                                            ; TopHeaderSlot                            ; true           
+                                     ;                         ; HeaderLinks-WishlistsPage   ; HeaderLinks           ;                                                                            ; HeaderLinksSlot                          ; true           
+                                     ;                         ; Footer-WishlistsPage        ; Footer                ;                                                                            ; FooterSlot                               ; true           
                                      
-INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]     ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='CartPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
-                                     ;                         ; SiteLogo-CartPage    ; SiteLogo              ;                                                                       ; SiteLogoSlot                             ; true           
-                                     ;                         ; HeaderLinks-CartPage ; HeaderLinks           ;                                                                       ; HeaderLinksSlot                          ; true           
-                                     ;                         ; Section1-CartPage    ; Section1              ;                                                                       ; Section1                                 ; true           
-                                     ;                         ; Section2-CartPage    ; Section2              ;                                                                       ; Section2                                 ; true           
-                                     ;                         ; Section3-CartPage    ; Section3              ;                                                                       ; Section3                                 ; true           
-                                     ;                         ; Footer-CartPage      ; Footer                ;                                                                       ; FooterSlot                               ; true           
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]       ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='wishlistsPage'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; Section1-WishlistsPage ; Section1              ;                                                            ; Section1Slot-WishlistsPage               ;  ;  ;  
+                                 ;                         ; Section2-WishlistsPage ; Section2              ;                                                            ; Section2Slot-WishlistsPage               ;  ;  ;  
+                                 ;                         ; Section3-WishlistsPage ; Section3              ;                                                            ; Section3Slot-WishlistsPage               ;  ;  ;  
+                                 
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]            ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='ContactUsPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
+                                     ;                         ; TopHeaderSlot-ContactUsPage ; TopHeaderSlot         ;                                                                            ; TopHeaderSlot                            ; true           
+                                     ;                         ; HeaderLinks-ContactUsPage   ; HeaderLinks           ;                                                                            ; HeaderLinksSlot                          ; true           
+                                     ;                         ; Footer-ContactUsPage        ; Footer                ;                                                                            ; FooterSlot                               ; true           
                                      
-INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]         ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='WishlistPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
-                                     ;                         ; SiteLogo-WishlistPage    ; SiteLogo              ;                                                                           ; SiteLogoSlot                             ; true           
-                                     ;                         ; HeaderLinks-WishlistPage ; HeaderLinks           ;                                                                           ; HeaderLinksSlot                          ; true           
-                                     ;                         ; Section1-WishlistPage    ; Section1              ;                                                                           ; Section1                                 ; true           
-                                     ;                         ; Section2-WishlistPage    ; Section2              ;                                                                           ; Section2                                 ; true           
-                                     ;                         ; Section3-WishlistPage    ; Section3              ;                                                                           ; Section3                                 ; true           
-                                     ;                         ; Footer-WishlistPage      ; Footer                ;                                                                           ; FooterSlot                               ; true           
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]       ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='contactUsPage'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; Section1-ContactUsPage ; Section1              ;                                                            ; Section1Slot-ContactUsPage               ;  ;  ;  
+                                 ;                         ; Section2-ContactUsPage ; Section2              ;                                                            ; Section2Slot-ContactUsPage               ;  ;  ;  
+                                 ;                         ; Section3-ContactUsPage ; Section3              ;                                                            ; Section3Slot-ContactUsPage               ;  ;  ;  
+                                 
+                                 
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]      ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='FAQPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
+                                     ;                         ; TopHeaderSlot-FAQPage ; TopHeaderSlot         ;                                                                      ; TopHeaderSlot                            ; true           
+                                     ;                         ; HeaderLinks-FAQPage   ; HeaderLinks           ;                                                                      ; HeaderLinksSlot                          ; true           
+                                     ;                         ; Footer-FAQPage        ; Footer                ;                                                                      ; FooterSlot                               ; true           
                                      
-INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]          ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='WishlistsPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
-                                     ;                         ; SiteLogo-WishlistsPage    ; SiteLogo              ;                                                                            ; SiteLogoSlot                             ; true           
-                                     ;                         ; HeaderLinks-WishlistsPage ; HeaderLinks           ;                                                                            ; HeaderLinksSlot                          ; true           
-                                     ;                         ; Section1-WishlistsPage    ; Section1              ;                                                                            ; Section1                                 ; true           
-                                     ;                         ; Section2-WishlistsPage    ; Section2              ;                                                                            ; Section2                                 ; true           
-                                     ;                         ; Section3-WishlistsPage    ; Section3              ;                                                                            ; Section3                                 ; true           
-                                     ;                         ; Footer-WishlistsPage      ; Footer                ;                                                                            ; FooterSlot                               ; true           
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true] ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='faqPage'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; Section1-FAQPage ; Section1              ;                                                      ; Section1Slot-FAQPage                     ;  ;  ;  
+                                 ;                         ; Section2-FAQPage ; Section2              ;                                                      ; Section2Slot-FAQPage                     ;  ;  ;  
+                                 ;                         ; Section3-FAQPage ; Section3              ;                                                      ; Section3Slot-FAQPage                     ;  ;  ;  
+                                 
+                                 
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]            ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='MyAccountPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
+                                     ;                         ; TopHeaderSlot-MyAccountPage ; TopHeaderSlot         ;                                                                            ; TopHeaderSlot                            ; true           
+                                     ;                         ; HeaderLinks-MyAccountPage   ; HeaderLinks           ;                                                                            ; HeaderLinksSlot                          ; true           
+                                     ;                         ; Footer-MyAccountPage        ; Footer                ;                                                                            ; FooterSlot                               ; true           
                                      
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]       ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='myAccountPage'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; Section1-MyAccountPage ; Section1              ;                                                            ; Section1Slot-MyAccountPage               ;  ;  ;  
+                                 ;                         ; Section2-MyAccountPage ; Section2              ;                                                            ; Section2Slot-MyAccountPage               ;  ;  ;  
+                                 ;                         ; Section3-MyAccountPage ; Section3              ;                                                            ; Section3Slot-MyAccountPage               ;  ;  ;  
+                                 
+                                 
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]               ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='RegistrationPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
+                                     ;                         ; TopHeaderSlot-RegistrationPage ; TopHeaderSlot         ;                                                                               ; TopHeaderSlot                            ; true           
+                                     ;                         ; HeaderLinks-RegistrationPage   ; HeaderLinks           ;                                                                               ; HeaderLinksSlot                          ; true           
+                                     ;                         ; Footer-RegistrationPage        ; Footer                ;                                                                               ; FooterSlot                               ; true           
                                      
-INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]          ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='ContactUsPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
-                                     ;                         ; SiteLogo-ContactUsPage    ; SiteLogo              ;                                                                            ; SiteLogoSlot                             ; true           
-                                     ;                         ; HeaderLinks-ContactUsPage ; HeaderLinks           ;                                                                            ; HeaderLinksSlot                          ; true           
-                                     ;                         ; Section1-ContactUsPage    ; Section1              ;                                                                            ; Section1                                 ; true           
-                                     ;                         ; Section2-ContactUsPage    ; Section2              ;                                                                            ; Section2                                 ; true           
-                                     ;                         ; Section3-ContactUsPage    ; Section3              ;                                                                            ; Section3                                 ; true           
-                                     ;                         ; Footer-ContactUsPage      ; Footer                ;                                                                            ; FooterSlot                               ; true           
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]          ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='registrationPage'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; Section1-RegistrationPage ; Section1              ;                                                               ; Section1Slot-RegistrationPage            ;  ;  ;  
+                                 ;                         ; Section2-RegistrationPage ; Section2              ;                                                               ; Section2Slot-RegistrationPage            ;  ;  ;  
+                                 
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]                   ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='PostRegistrationPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
+                                     ;                         ; TopHeaderSlot-PostRegistrationPage ; TopHeaderSlot         ;                                                                                   ; TopHeaderSlot                            ; true           
+                                     ;                         ; HeaderLinks-PostRegistrationPage   ; HeaderLinks           ;                                                                                   ; HeaderLinksSlot                          ; true           
+                                     ;                         ; Footer-PostRegistrationPage        ; Footer                ;                                                                                   ; FooterSlot                               ; true           
                                      
-INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]    ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='FAQPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
-                                     ;                         ; SiteLogo-FAQPage    ; SiteLogo              ;                                                                      ; SiteLogoSlot                             ; true           
-                                     ;                         ; HeaderLinks-FAQPage ; HeaderLinks           ;                                                                      ; HeaderLinksSlot                          ; true           
-                                     ;                         ; Section1-FAQPage    ; Section1              ;                                                                      ; Section1                                 ; true           
-                                     ;                         ; Section2-FAQPage    ; Section2              ;                                                                      ; Section2                                 ; true           
-                                     ;                         ; Section3-FAQPage    ; Section3              ;                                                                      ; Section3                                 ; true           
-                                     ;                         ; Footer-FAQPage      ; Footer                ;                                                                      ; FooterSlot                               ; true           
-                                     
-INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]          ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='MyAccountPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
-                                     ;                         ; SiteLogo-MyAccountPage    ; SiteLogo              ;                                                                            ; SiteLogoSlot                             ; true           
-                                     ;                         ; HeaderLinks-MyAccountPage ; HeaderLinks           ;                                                                            ; HeaderLinksSlot                          ; true           
-                                     ;                         ; Section1-MyAccountPage    ; Section1              ;                                                                            ; Section1                                 ; true           
-                                     ;                         ; Section2-MyAccountPage    ; Section2              ;                                                                            ; Section2                                 ; true           
-                                     ;                         ; Section3-MyAccountPage    ; Section3              ;                                                                            ; Section3                                 ; true           
-                                     ;                         ; Footer-MyAccountPage      ; Footer                ;                                                                            ; FooterSlot                               ; true           
-                                     
-                                     
-INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]             ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='RegistrationPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
-                                     ;                         ; SiteLogo-RegistrationPage    ; SiteLogo              ;                                                                               ; SiteLogoSlot                             ; true           
-                                     ;                         ; HeaderLinks-RegistrationPage ; HeaderLinks           ;                                                                               ; HeaderLinksSlot                          ; true           
-                                     ;                         ; Section1-RegistrationPage    ; Section1              ;                                                                               ; Section1                                 ; true           
-                                     ;                         ; Section2-RegistrationPage    ; Section2              ;                                                                               ; Section2                                 ; true           
-                                     ;                         ; Footer-RegistrationPage      ; Footer                ;                                                                               ; FooterSlot                               ; true           
-                                     
-INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true]                 ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='PostRegistrationPageTemplate'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite 
-                                     ;                         ; SiteLogo-PostRegistrationPage    ; SiteLogo              ;                                                                                   ; SiteLogoSlot                             ; true           
-                                     ;                         ; HeaderLinks-PostRegistrationPage ; HeaderLinks           ;                                                                                   ; HeaderLinksSlot                          ; true           
-                                     ;                         ; Section1-PostRegistrationPage    ; Section1              ;                                                                                   ; Section1                                 ; true           
-                                     ;                         ; Section2-PostRegistrationPage    ; Section2              ;                                                                                   ; Section2                                 ; true           
-                                     ;                         ; Footer-PostRegistrationPage      ; Footer                ;                                                                                   ; FooterSlot                               ; true           
-                                     
-                                     
-                                     
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]              ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='postRegistrationPage'] ; contentSlot(uid,$contentCV)[unique=true] ;  ;  ;  
+                                 ;                         ; Section1-PostRegistrationPage ; Section1              ;                                                                   ; Section1Slot-PostRegistrationPage        ;  ;  ;  
+                                 ;                         ; Section2-PostRegistrationPage ; Section2              ;                                                                   ; Section2Slot-PostRegistrationPage        ;  ;  ;  
+                                 
+                                 
+                                 
 INSERT_UPDATE HomePage ; $contentCV[unique=true] ; uid[unique=true] ; name     ; masterTemplate(uid,$contentCV) ; label    ; defaultPage[default='true'] ; approvalStatus(code)[default='approved'] ; homepage[default='true'] 
                        ;                         ; homepage         ; Homepage ; HomePageTemplate               ; homepage 
                        

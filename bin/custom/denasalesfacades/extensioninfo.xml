@@ -7,9 +7,7 @@
 <extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
 
-	<extension abstractclassprefix="Generated" classprefix="Denasalesfacades"
-		managername="DenasalesfacadesManager" managersuperclass="de.hybris.platform.jalo.extension.Extension"
-		name="denasalesfacades" usemaven="false">
+	<extension abstractclassprefix="Generated" classprefix="Denasalesfacades" name="denasalesfacades">
 		<!-- for more information on maven managed libraries please consult https://wiki.hybris.com/x/Nq8sDQ -->
 
 		<!-- you should add all required extensions to this list, except platform 
@@ -23,9 +21,8 @@
 		<!-- <webmodule jspcompile="false" webroot="/denasalesfacades"/> -->
 		<requires-extension name="yacceleratorfacades" />
 		<requires-extension name="denasalesservices" />
-
-
-
+		
+		<coremodule generated="true" manager="de.hybris.platform.jalo.extension.GenericManager" packageroot="com.denasales.facades"/>
 	</extension>
 
 </extensioninfo>

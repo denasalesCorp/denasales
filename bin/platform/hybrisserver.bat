@@ -2,27 +2,10 @@
 
 ::############################################################################################
 :: This script was injected into hybrisserver.bat file. After every start(hybrisserver.bat), 
-:: script will be copy local.properties's content into a copyLocal.properties file.
-:: The copyLocal.properties location is folder above of a hybris folder.
+:: script will be copy local.properties file into a folder above of a hybris folder on one step as a copyLocal.properties.
 :: All originall content of local.properties will be located locally only.
 echo Denasale's script is executing
-if Not exist ../../../../copyLocal.properties (
-    break>"../../../../copyLocal.properties"
-)
-
-set REL_PATH=..\..\..\..\
-set ABS_PATH=
-rem // Save current directory and change to target directory
-pushd %REL_PATH%
-rem // Save value of CD variable (current directory)
-set ABS_PATH=%CD%
-rem // Restore original directory
-popd
-for /f "tokens=*" %%a in (../../config/local.properties) do (
-    >nul findstr /c:"%%a" %ABS_PATH%\copyLocal.properties || (
-      @echo %%a>> ../../../../copyLocal.properties
-    )
-)
+copy ..\..\config\local.properties ..\..\..\..\copyLocal.properties
 ::############################################################################################
 
 setlocal

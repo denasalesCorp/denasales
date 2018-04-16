@@ -1,0 +1,164 @@
+.disableTextDecoratingForHref {
+	text-decoration: none
+}
+
+.hideULBullet {
+	list-style-type: none;
+}
+
+.footerBackGroundColor {
+	background-color: #000080;
+}
+
+.hideMargin {
+	margin: 0;
+}
+
+.backToTopText {
+	background-color: #5353e0;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 35px;
+	color: white;
+}
+
+div.backToTopText:hover {
+	background-color: #0404d2;
+	color: white;
+}
+
+.footerCopyright {
+	font-size: 9pt;
+	text-align: center;
+	color: #e2e2e2;
+}
+
+.denasales {
+	text-shadow: 1px 1px 1px rgba(230, 14, 14, 1);
+	font-weight: normal;
+	color: #FFFF00;
+	letter-spacing: 0pt;
+	word-spacing: 1pt;
+	font-size: 29px;
+	text-align: center;
+	font-family: times new roman, times, serif;
+	line-height: 1;
+}
+
+.arrow-up {
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid white;
+	margin-left: 65px;
+	margin-top: -16px;
+}
+
+.arrow-down {
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid white;
+	margin-left: 65px;
+	margin-top: 3px;
+}
+
+.languageBorder {
+	color: white;
+	border: 1px solid white;
+	border-radius: 3px;
+	height: 25px;
+	width: 90px;
+}
+
+.languageText {
+	margin: 4px;
+	display: block;
+	vertical-align: middle;
+}
+
+.currencyBorder {
+	color: white;
+	border: 1px solid white;
+	border-radius: 3px;
+	height: 25px;
+	width: 90px;
+}
+
+.currencyText {
+	margin: 4px;
+	display: block;
+	vertical-align: middle;
+}
+
+/* The Modal (background) */
+.i18nModal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: #ffffff;
+	margin: 15% auto;
+	padding: 20px;
+	border: 12px solid #784dca;
+	width: 50%;
+	border-radius: 0px 100px/120px;
+}
+
+/* The Close Button */
+.close {
+	color: #3500ff;
+	float: right;
+	font-size: 35px;
+	font-weight: normal;
+	margin-top: -3%;
+}
+
+.close:hover, .close:focus {
+	color: #3500ff;
+	text-decoration: none;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.i18nModalText {
+	text-align: center;
+	vertical-align: top;
+	margin: 0;
+	margin-top: -1.5%;
+}
+
+.i18nDropDownMenu {
+	margin-bottom: -1.5%;
+	margin-top: 2%;
+	text-align: center;
+}
+
+.modalButton {
+	width: 150px;
+}
+
+.modalIndigo {
+	background-color: #784dca;
+	cursor: pointer;
+}
+
+.modalIndigo:hover {
+	background-color: #000080;
+}
+
+.cursorPointer{
+	cursor: pointer;
+}

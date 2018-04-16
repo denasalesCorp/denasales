@@ -10,10 +10,23 @@
 <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="items.xsd">
 	<collectiontypes>
-		<collectiontype code="setOfProducts" elementtype="Product"
+		<collectiontype code="setOfProducts" elementtype="DenasalesProduct"
 			autocreate="true" generate="true" type="list" />
 		<collectiontype code="setOfProductVariants"
-			elementtype="VariantProduct" autocreate="true" generate="true" type="list" />
+			elementtype="DenasalesVariantProduct" autocreate="true" generate="true"
+			type="list" />
+		<collectiontype code="footerColumnValues" elementtype="java.lang.String"
+			autocreate="true" generate="true" type="list" />
+		<collectiontype code="localized:overHeaderProducts"
+			elementtype="Product" autocreate="true" generate="true" type="list" />
+		<collectiontype code="localized:mainAccordionProducts"
+			elementtype="Product" autocreate="true" generate="true" type="list" />
+		<collectiontype code="localized:discountProducts"
+			elementtype="Product" autocreate="true" generate="true" type="list" />
+		<collectiontype code="localized:popularProducts"
+			elementtype="Product" autocreate="true" generate="true" type="list" />
+		<collectiontype code="localized:subscribeProducts"
+			elementtype="Product" autocreate="true" generate="true" type="list" />
 	</collectiontypes>
 
 	<enumtypes>
@@ -34,6 +47,27 @@
 			<value code="PostRegistration" />
 		</enumtype>
 	</enumtypes>
+	<maptypes>
+		<maptype argumenttype="java.lang.String" returntype="footerColumnValues"
+			code="footerColumns" />
+	</maptypes>
+
+	<relations>
+		<relation code="DenasalesProduct2DenasalesVariantRelation" autocreate="true"
+			generate="true" localized="false">
+			<sourceElement qualifier="baseProduct" type="DenasalesProduct" cardinality="one">
+				<modifiers read="true" write="true" search="true" optional="false" initial="true" />
+			</sourceElement>
+			<targetElement qualifier="denasalesVariants" type="DenasalesVariantProduct" cardinality="many" ordered="false">
+				<modifiers read="true" write="true" search="true" optional="true" partof="true" />
+				<custom-properties>
+					<property name="ordering.attribute">
+						<value>"code"</value>
+					</property>
+				</custom-properties>
+			</targetElement>
+		</relation>
+	</relations>
 
 	<itemtypes>
 		<itemtype generate="true" code="SetProduct"
@@ -56,64 +90,252 @@
 				</attribute>
 			</attributes>
 		</itemtype>
+		<itemtype code="DenasalesProduct" jaloclass="com.denasales.core.jalo.DenasalesProduct"
+			extends="Product" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="DenasalesVariantProduct"
+			jaloclass="com.denasales.core.jalo.DenasalesVariantProduct" extends="DenasalesProduct"
+			autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="previousBaseProduct" type="DenasalesProduct"
+					autocreate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" search="true" optional="true" initial="true" />
+				</attribute>
+			</attributes>
+		</itemtype>
 
 		<!-- CMS pages -->
-		<itemtype code="HomePage" jaloclass="de.hybris.platform.cms2.jalo.pages.HomePage"
+		<itemtype code="HomePage" jaloclass="com.denasales.core.jalo.HomePage"
 			extends="ContentPage" autocreate="true" generate="true">
 		</itemtype>
-		<itemtype code="ProductListPage"
-			jaloclass="de.hybris.platform.cms2.jalo.pages.ProductListPage"
+		<itemtype code="ProductListPage" jaloclass="com.denasales.core.jalo.ProductListPage"
 			extends="ContentPage" autocreate="true" generate="true">
 		</itemtype>
-		<itemtype code="ProductDetailsPage"
-			jaloclass="de.hybris.platform.cms2.jalo.pages.ProductDetailsPage"
+		<itemtype code="ProductDetailsPage" jaloclass="com.denasales.core.jalo.ProductDetailsPage"
 			extends="ContentPage" autocreate="true" generate="true">
 		</itemtype>
 		<itemtype code="BillingShippingAddressPage"
-			jaloclass="de.hybris.platform.cms2.jalo.pages.BillingShippingAddressPage"
+			jaloclass="com.denasales.core.jalo.BillingShippingAddressPage"
 			extends="ContentPage" autocreate="true" generate="true">
 		</itemtype>
 		<itemtype code="CheckingBillingShippingAddressPage"
-			jaloclass="de.hybris.platform.cms2.jalo.pages.CheckingBillingShippingAddressPage"
+			jaloclass="com.denasales.core.jalo.CheckingBillingShippingAddressPage"
 			extends="ContentPage" autocreate="true" generate="true">
 		</itemtype>
 		<itemtype code="ProductPurchasingPage"
-			jaloclass="de.hybris.platform.cms2.jalo.pages.ProductPurchasingPage"
-			extends="ContentPage" autocreate="true" generate="true">
-		</itemtype>
-		<itemtype code="CartPage" jaloclass="de.hybris.platform.cms2.jalo.pages.CartPage"
-			extends="ContentPage" autocreate="true" generate="true">
-		</itemtype>
-		<itemtype code="WishlistPage"
-			jaloclass="de.hybris.platform.cms2.jalo.pages.WishlistPage" extends="ContentPage"
+			jaloclass="com.denasales.core.jalo.ProductPurchasingPage" extends="ContentPage"
 			autocreate="true" generate="true">
 		</itemtype>
-		<itemtype code="WishlistsPage"
-			jaloclass="de.hybris.platform.cms2.jalo.pages.WishlistsPage" extends="ContentPage"
-			autocreate="true" generate="true">
-		</itemtype>
-		<itemtype code="ContactUsPage"
-			jaloclass="de.hybris.platform.cms2.jalo.pages.ContactUsPage" extends="ContentPage"
-			autocreate="true" generate="true">
-		</itemtype>
-		<itemtype code="FAQPage" jaloclass="de.hybris.platform.cms2.jalo.pages.FAQPage"
+		<itemtype code="CartPage" jaloclass="com.denasales.core.jalo.CartPage"
 			extends="ContentPage" autocreate="true" generate="true">
 		</itemtype>
-		<itemtype code="MyAccountPage"
-			jaloclass="de.hybris.platform.cms2.jalo.pages.MyAccountPage" extends="ContentPage"
-			autocreate="true" generate="true">
-		</itemtype>
-		<itemtype code="RegistrationPage"
-			jaloclass="de.hybris.platform.cms2.jalo.pages.RegistrationPage"
+		<itemtype code="WishlistPage" jaloclass="com.denasales.core.jalo.WishlistPage"
 			extends="ContentPage" autocreate="true" generate="true">
 		</itemtype>
-		<itemtype code="PostRegistrationPage"
-			jaloclass="de.hybris.platform.cms2.jalo.pages.PostRegistrationPage"
+		<itemtype code="WishlistsPage" jaloclass="com.denasales.core.jalo.WishlistsPage"
 			extends="ContentPage" autocreate="true" generate="true">
 		</itemtype>
-		<itemtype code="ErrorPage" jaloclass="de.hybris.platform.cms2.jalo.pages.ErrorPage"
+		<itemtype code="ContactUsPage" jaloclass="com.denasales.core.jalo.ContactUsPage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="FAQPage" jaloclass="com.denasales.core.jalo.FAQPage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="MyAccountPage" jaloclass="com.denasales.core.jalo.MyAccountPage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="RegistrationPage" jaloclass="com.denasales.core.jalo.RegistrationPage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="PostRegistrationPage" jaloclass="com.denasales.core.jalo.PostRegistrationPage"
+			extends="ContentPage" autocreate="true" generate="true">
+		</itemtype>
+		<itemtype code="ErrorPage" jaloclass="com.denasales.core.jalo.ErrorPage"
 			extends="ContentPage" autocreate="true" generate="true">
 		</itemtype>
 		<!-- CMS pages -->
+
+		<!-- CMS Components -->
+		<itemtype code="CMSBackToTopParagraphComponent" generate="true"
+			jaloclass="com.denasales.core.jalo.CMSBackToTopParagraphComponent"
+			extends="CMSParagraphComponent" autocreate="true">
+			<description>Back to top component.</description>
+		</itemtype>
+		<itemtype code="CMSCopyrightParagraphComponent" generate="true"
+			jaloclass="com.denasales.core.jalo.CMSCopyrightParagraphComponent"
+			extends="CMSParagraphComponent" autocreate="true">
+			<description>It represents component with a copyright symbol and year.</description>
+		</itemtype>
+		<itemtype code="CMSInternationalizationParagraphComponent"
+			generate="true"
+			jaloclass="com.denasales.core.jalo.CMSInternationalizationParagraphComponent"
+			extends="CMSParagraphComponent" autocreate="true">
+			<description>It represents component with internationalization elements.</description>
+		</itemtype>
+		<itemtype code="CMSFooterColumnsParagraphComponent" generate="true"
+			jaloclass="com.denasales.core.jalo.CMSInternationalizationParagraphComponent"
+			extends="CMSParagraphComponent" autocreate="true">
+			<description>It represents columns in footer.</description>
+			<attributes>
+				<attribute type="footerColumns" qualifier="columns">
+					<persistence type="property" />
+					<modifiers />
+					<description>Map of columns</description>
+				</attribute>
+				<attribute type="java.lang.String" qualifier="newColumnName">
+					<persistence type="property" />
+					<modifiers />
+					<description>New column will be taken by an interceptor and reset. It will be saved as null in the database the all time.</description>
+				</attribute>
+				<attribute type="java.lang.String" qualifier="newValueName">
+					<persistence type="property" />
+					<modifiers />
+					<description>A value will be mapped with newColumnName and saved into footerColumns</description>
+				</attribute>
+				<attribute type="java.lang.String" qualifier="newReferenceForColumnValue">
+					<persistence type="property" />
+					<modifiers />
+					<description>A reference will be injected into 'a' tag. 'a' tag will wrap newValueName value and it will be saved into footerColumns.</description>
+				</attribute>
+				<attribute type="boolean" qualifier="remove">
+					<persistence type="property" />
+					<modifiers />
+					<defaultvalue>false</defaultvalue>
+					<description>If the value is true, a value will be removed.</description>
+				</attribute>
+			</attributes>
+		</itemtype>
+		<itemtype code="DenasalesSearchBoxComponent" generate="true"
+			jaloclass="com.denasales.core.jalo.DenasalesSearchBoxComponent"
+			extends="SearchBoxComponent" autocreate="true">
+			<description>Search box.</description>
+		</itemtype>
+		<itemtype code="DenasalesLogoComponent" generate="true"
+			jaloclass="com.denasales.core.jalo.DenasalesLogoComponent" extends="SimpleCMSComponent"
+			autocreate="true">
+			<description>Logo.</description>
+			<attributes>
+				<attribute type="localized:MediaContainer" qualifier="logoMedia">
+					<persistence type="property" />
+					<modifiers />
+					<description>Logo media</description>
+				</attribute>
+				<attribute type="localized:java.lang.String" qualifier="logoText">
+					<persistence type="property" />
+					<modifiers />
+					<description>Logo text.</description>
+				</attribute>
+			</attributes>
+		</itemtype>
+		<itemtype code="DenasalesMiniCartComponent" generate="true"
+			jaloclass="com.denasales.core.jalo.DenasalesMiniCartComponent"
+			extends="MiniCartComponent" autocreate="true">
+			<description>Mini cart.</description>
+		</itemtype>
+		<itemtype code="DenasalesMiniAccountComponent" generate="true"
+			jaloclass="com.denasales.core.jalo.DenasalesMiniAccountComponent"
+			extends="SimpleCMSComponent" autocreate="true">
+			<description>Mini account.</description>
+		</itemtype>
+		<itemtype code="DenasalesBreadcrumbComponent" generate="true"
+			jaloclass="com.denasales.core.jalo.DenasalesBreadcrumbComponent"
+			extends="BreadcrumbComponent" autocreate="true">
+			<description>Breadcrumb.</description>
+		</itemtype>
+		<itemtype code="DenasalesMiniWishlistComponent" generate="true"
+			jaloclass="com.denasales.core.jalo.DenasalesMiniWishlistComponent"
+			extends="SimpleCMSComponent" autocreate="true">
+			<description>Mini wishlist.</description>
+		</itemtype>
+		<itemtype code="DenasalesOverHeaderAdvertComponent" generate="true"
+			jaloclass="com.denasales.core.jalo.DenasalesOverHeaderAdvertComponent"
+			extends="SimpleCMSComponent" autocreate="true">
+			<description>Over header products.</description>
+			<attributes>
+				<attribute type="localized:overHeaderProducts" qualifier="products">
+					<persistence type="property" />
+					<modifiers />
+					<description>Products</description>
+				</attribute>
+				<attribute type="java.lang.Integer" qualifier="maxNumberOfProducts">
+					<persistence type="property" />
+					<modifiers />
+					<description>Max number of products.</description>
+				</attribute>
+			</attributes>
+		</itemtype>
+		<itemtype code="DenasalesMainAccordionAdvertComponent"
+			generate="true"
+			jaloclass="com.denasales.core.jalo.DenasalesMainAccordionAdvertComponent"
+			extends="SimpleCMSComponent" autocreate="true">
+			<description>Main content. Accordion for products. Slot 1.</description>
+			<attributes>
+				<attribute type="localized:mainAccordionProducts"
+					qualifier="products">
+					<persistence type="property" />
+					<modifiers />
+					<description>Products</description>
+				</attribute>
+				<attribute type="java.lang.Integer" qualifier="maxNumberOfProducts">
+					<persistence type="property" />
+					<modifiers />
+					<description>Max number of products.</description>
+				</attribute>
+			</attributes>
+		</itemtype>
+		<itemtype code="DenasalesDiscountProductsComponent" generate="true"
+			jaloclass="com.denasales.core.jalo.DenasalesDiscountProductsComponent"
+			extends="SimpleCMSComponent" autocreate="true">
+			<description>Main content. Discount products. Slot 2 and 4.</description>
+			<attributes>
+				<attribute type="localized:discountProducts" qualifier="products">
+					<persistence type="property" />
+					<modifiers />
+					<description>Products</description>
+				</attribute>
+				<attribute type="java.lang.Integer" qualifier="maxNumberOfProducts">
+					<persistence type="property" />
+					<modifiers />
+					<description>Max number of products.</description>
+				</attribute>
+			</attributes>
+		</itemtype>
+		<itemtype code="DenasalesPopularProductsComponent" generate="true"
+			jaloclass="com.denasales.core.jalo.DenasalesPopularProductsComponent"
+			extends="SimpleCMSComponent" autocreate="true">
+			<description>Main content. Popular products. Slot 3.</description>
+			<attributes>
+				<attribute type="localized:popularProducts" qualifier="products">
+					<persistence type="property" />
+					<modifiers />
+					<description>Products</description>
+				</attribute>
+				<attribute type="java.lang.Integer" qualifier="maxNumberOfProducts">
+					<persistence type="property" />
+					<modifiers />
+					<description>Max number of products.</description>
+				</attribute>
+			</attributes>
+		</itemtype>
+		<itemtype code="DenasalesSubscribeProductsComponent"
+			generate="true"
+			jaloclass="com.denasales.core.jalo.DenasalesSubscribeProductsComponent"
+			extends="SimpleCMSComponent" autocreate="true">
+			<description>Main content. Subscribe products. Slot 5.</description>
+			<attributes>
+				<attribute type="localized:subscribeProducts" qualifier="products">
+					<persistence type="property" />
+					<modifiers />
+					<description>Products</description>
+				</attribute>
+				<attribute type="java.lang.Integer" qualifier="maxNumberOfProducts">
+					<persistence type="property" />
+					<modifiers />
+					<description>Max number of products.</description>
+				</attribute>
+			</attributes>
+		</itemtype>
+		<!-- CMS Components -->
 	</itemtypes>
 </items>
